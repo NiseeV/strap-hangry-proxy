@@ -7,6 +7,11 @@ const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 
+// Root route for testing
+app.get('/', (req, res) => {
+  res.send('🚀 StrapHangry Proxy is running! Use /proxy?url=YOUR_URL to fetch data.');
+});
+
 app.get('/proxy', async (req, res) => {
   const targetUrl = req.query.url;
 
